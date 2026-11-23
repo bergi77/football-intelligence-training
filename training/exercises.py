@@ -7,62 +7,62 @@ def load_data() -> pd.DataFrame:
     return pd.read_csv(csv_path)
 
 
-# 1. Alapfelfedezés: shape, dtypes, hiányzó értékek
+# 1. Basic exploration: shape, dtypes, missing values
 def exercise_01(df: pd.DataFrame) -> None:
     pass
 
 
-# 2. Szűrés ligára és szezonra, meccsek száma
+# 2. Filter by league and season, count matches
 def exercise_02(df: pd.DataFrame) -> None:
     pass
 
 
-# 3. Rendezés total_goals szerint, top 10
+# 3. Sort by total_goals, top 10
 def exercise_03(df: pd.DataFrame) -> None:
     pass
 
 
-# 4. is_draw oszlop
+# 4. is_draw column
 def exercise_04(df: pd.DataFrame) -> None:
     pass
 
 
-# 5. high_scoring oszlop
+# 5. high_scoring column
 def exercise_05(df: pd.DataFrame) -> None:
     pass
 
 
-# 6. match_date -> datetime, month, weekday oszlopok
+# 6. match_date -> datetime, month, weekday columns
 def exercise_06(df: pd.DataFrame) -> None:
     pass
 
 
-# 7. Ligánkénti átlagos total_goals és meccsek száma
+# 7. Average total_goals and match count per league
 def exercise_07(df: pd.DataFrame) -> None:
     pass
 
 
-# 8. Csapatonkénti hazai győzelmi arány
+# 8. Home win rate per team
 def exercise_08(df: pd.DataFrame) -> None:
     pass
 
 
-# 9. Hónaponkénti átlagos gólszám
+# 9. Average goals per month
 def exercise_09(df: pd.DataFrame) -> None:
     pass
 
 
-# 10. Egy csapat utolsó 5 meccsének formája (W/D/L)
+# 10. A team's form over its last 5 matches (W/D/L)
 def exercise_10(df: pd.DataFrame, team: str) -> None:
     pass
 
 
-# 11. Pivot tábla: liga vs. szezon, átlagos total_goals
+# 11. Pivot table: league vs. season, average total_goals
 def exercise_11(df: pd.DataFrame) -> None:
     pass
 
 
-# 12. Leggyakoribb csapatpárosok
+# 12. Most frequent team matchups
 def exercise_12(df: pd.DataFrame) -> None:
     pass
 

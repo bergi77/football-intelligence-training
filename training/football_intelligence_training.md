@@ -1,46 +1,45 @@
-# Football Intelligence – Pandas gyakorló anyag (1. szint)
+# Football Intelligence – Pandas Training (Level 1)
 
-## Cél
-A `football_charts_matches.csv` mérkőzés-adatokon gyakorolni a Pandas alapjait: betöltés,
-felfedezés, szűrés, rendezés, új oszlopok, csoportosítás, és egyszerű statisztikák.
+## Goal
+Practice Pandas fundamentals on the `football_charts_matches.csv` match data: loading,
+exploration, filtering, sorting, new columns, grouping, and simple statistics.
 
-## Adat
-Útvonal: `C:\szemelyes_papir2\FI\1_hét\football_charts_matches_v2026.10\football_charts_matches.csv`
+## Data
+Path: `C:\szemelyes_papir2\FI\1_hét\football_charts_matches_v2026.10\football_charts_matches.csv`
 
-Oszlopok: `league`, `league_name`, `country`, `season`, `match_date`, `time`, `kickoff_utc`,
+Columns: `league`, `league_name`, `country`, `season`, `match_date`, `time`, `kickoff_utc`,
 `home_team`, `away_team`, `ht_result`, `ft_result`, `home_goals`, `away_goals`, `total_goals`,
 `result` (H/D/A), `first_goal_time`, `all_goal_times`.
 
-## Gyakorló feladatok
+## Practice exercises
 
-Dolgozz az `exercises.py` fájlban, minden feladatot külön függvényben oldj meg.
+Work in the `exercises.py` file, solving each exercise in its own function.
 
-### Alapok (ismétlés)
-1. Töltsd be a CSV-t, és írd ki a `shape`, `dtypes`, és a hiányzó értékek számát oszloponként.
-2. Szűrj egy tetszőleges ligára és szezonra, majd számold meg a meccsek számát.
-3. Rendezd a meccseket `total_goals` szerint csökkenő sorrendbe, írd ki a top 10-et.
+### Basics (review)
+1. Load the CSV and print the `shape`, `dtypes`, and the number of missing values per column.
+2. Filter for any league and season, then count the matches.
+3. Sort the matches by `total_goals` descending, print the top 10.
 
-### Új oszlopok
-4. Hozz létre egy `is_draw` logikai oszlopot (`result == "D"`).
-5. Hozz létre egy `high_scoring` oszlopot, ami `True`, ha `total_goals >= 4`.
-6. Alakítsd `datetime`-má a `match_date` oszlopot, és hozz létre belőle egy `month` és egy
-   `weekday` oszlopot.
+### New columns
+4. Create a boolean `is_draw` column (`result == "D"`).
+5. Create a `high_scoring` column that is `True` when `total_goals >= 4`.
+6. Convert `match_date` to `datetime`, and derive a `month` and a `weekday` column from it.
 
-### Csoportosítás (groupby)
-7. Számold ki ligánként az átlagos `total_goals`-t és a meccsek számát egyben
+### Grouping (groupby)
+7. Compute the average `total_goals` and match count per league in one go
    (`.agg(["mean", "count"])`).
-8. Számold ki csapatonként (hazai pályán) a győzelmi arányt
-   (`hazai győzelmek száma / hazai meccsek száma`).
-9. Mely hónapokban (`month` oszlop a 6. feladatból) a legmagasabb az átlagos gólszám?
+8. Compute each team's home win rate
+   (number of home wins / number of home matches).
+9. Which months (from the `month` column in exercise 6) have the highest average goals?
 
-### Haladóbb kérdések
-10. Készíts egy "forma" mutatót: egy kiválasztott csapat utolsó 5 meccsének eredményeit
-    (`W`/`D`/`L`) időrendben (tipp: szűrés csapatra, rendezés dátum szerint, `.tail(5)`).
-11. Pivot tábla: ligák (sorok) vs. szezonok (oszlopok), érték = átlagos `total_goals`
+### More advanced questions
+10. Build a "form" indicator: the results (`W`/`D`/`L`) of a chosen team's last 5 matches
+    in chronological order (hint: filter by team, sort by date, `.tail(5)`).
+11. Pivot table: leagues (rows) vs. seasons (columns), value = average `total_goals`
     (`pd.pivot_table`).
-12. Mely csapatpárosok (`home_team` + `away_team`) játszottak egymás ellen a legtöbbször?
-    (`value_counts` egy kombinált oszlopon).
+12. Which team pairings (`home_team` + `away_team`) have played each other the most?
+    (`value_counts` on a combined column).
 
-## Tipp
-Minden feladatnál írasd ki a köztes eredményt (`print`), hogy ellenőrizni tudd a logikát,
-mielőtt a következő lépésre lépsz.
+## Tip
+Print the intermediate result (`print`) for each exercise to verify your logic before
+moving on to the next step.
